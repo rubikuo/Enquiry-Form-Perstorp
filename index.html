@@ -26,7 +26,7 @@
       <!---Request 1  -->
       <!-- Contact details with autocoplete------------------------------------------------------------------->
 
-      <h5>1. Your contact details</h5>
+      <h5>1. Contact details</h5>
       <div class="form-group ">
         <label>Name</label>
         <input type="name" class="form-control" style="width: 20rem;" id="username" aria-describedby="nameHelp"
@@ -41,7 +41,7 @@
 
       <!---Request 2------------------------------------------------------------------------>
       <!---radio buttons because you should choose ONLY one option-->
-      <h5>2. The type of transportation</h5>
+      <h5 class="mt-3 mb-2">2. Transportation type</h5>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
         <label class="form-check-label" for="exampleRadios1">
@@ -64,7 +64,7 @@
       <!--- if bulk or both, show the following checkboxes:----------------------------------->
 
       <div class="ifBulk">
-        <h6 class="mt-3"><i>** Special equipment and other requirements (extra costs may occur)</i></h6>
+        <h6 class="mt-3 mb-2"><i>** Special equipment and other requirements (extra costs may occur)</i></h6>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
@@ -136,11 +136,11 @@
       </div>
       <!--Request 4-->
       <!--Input Quantity and Dropdown shipment frequency-->
-      <h5 class="my-2">3. Goods quantity and shipment frequency</h5>
+      <h5 class="my-3">3. Goods quantity and shipment frequency</h5>
       <div class="form-group qty-option ">
-        <input class="form-control" id="qty-input" style="width:6rem;" placeholder="100" type="text" name="quantity" pattern="[0-9]"
-          min="1" required>
-        <!--is there any MOQ? -->
+        <input class="form-control" id="qty-input" style="width:6rem;" placeholder="100" type="text" name="quantity"
+          pattern="[0-9]" min="1" required>
+        <!--is there any MOQ request? -->
         <select class="form-control" style="width:10rem;">
           <option>Trucks</option>
           <option>Metric tons</option>
@@ -153,7 +153,7 @@
       </div>
       <!---Request 5------------------------------------------------------------------------>
       <!------------Estimate upcoming load------->
-      <h5 class="my-2">4. Would you like to estimate for an upcoming load or is it a general quote?</h5>
+      <h5 class="mt-3 mb-2">4. Would you like to estimate for an upcoming load or is it a general quote?</h5>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="quoteType" id="quoteType1" value="option1" checked>
         <label class="form-check-label" for="quoteType1">
@@ -166,7 +166,15 @@
           General estimate (for potential business)
         </label>
       </div>
- 
+      <!---Request 6------------------------------------------------------------------------>
+      <!------------Product description------->
+      <h5 class="mt-3 mb-2">5. Product description </h5>
+      <div class="form-group">
+        <label for="product-decription">(Max. 50 characters)</label>
+        <textarea class="form-control" style="width:25rem; max-height:10rem;" placeholder="" type="text" name="product"
+          pattern="[0-9]" maxlength="50" id="product-decription" rows="3" required></textarea>
+      </div>
+
     </form>
   </div>
 
