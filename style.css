@@ -7,3 +7,12 @@ html {
     margin-left: 4rem;
     margin-top: 1rem;
 }
+
+.temperature .form-control-sm {
+    display: inline !important;
+}
+
+/* ---request 4 quantity option ---*/
+.qty-option .form-control {
+    display: inline !important;
+}
