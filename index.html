@@ -138,12 +138,13 @@
       <!--Input Quantity and Dropdown shipment frequency-->
       <h5 class="my-3">3. Goods quantity and shipment frequency</h5>
       <div class="form-group qty-option ">
-        <input class="form-control" id="qty-input" style="width:6rem;" placeholder="100" type="text" name="quantity"
+        <input class="form-control" id="qty-input" style="width:6rem;" placeholder="1" type="text" name="quantity"
           pattern="[0-9]" min="1" required>
         <!--is there any MOQ request? -->
+        <!--input number must be > zero-->
         <select class="form-control" style="width:10rem;">
-          <option>Trucks</option>
-          <option>Metric tons</option>
+          <option>Truck(s)</option>
+          <option>Metric ton(s)</option>
         </select>
         <span class="d-inline mx-1">in a frequency of</span>
         <select class="form-control " style="width:10rem;">
@@ -172,7 +173,7 @@
       <div class="form-group">
         <label for="product-decription">(Max. 50 characters)</label>
         <textarea class="form-control" style="width:25rem; max-height:10rem;" placeholder="" type="text" name="product"
-          pattern="[0-9]" maxlength="50" id="product-decription" rows="3" required></textarea>
+          maxlength="50" id="product-decription" rows="3" required></textarea>
       </div>
 
     </form>
