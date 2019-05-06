@@ -20,3 +20,7 @@ html {
 #qty-input {
     padding-top: 3px;
 }
+
+.form-row .transport-from {
+    display: inline !important;
+}
