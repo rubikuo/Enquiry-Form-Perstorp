@@ -8,6 +8,15 @@ html {
     margin-top: 1rem;
 }
 
+/*----request3 special requirement---*/
+.hide {
+    display: block;
+}
+
+.specialnote {
+    color: red;
+}
+
 .temperature .form-control-sm {
     display: inline !important;
 }
@@ -24,3 +33,4 @@ html {
 .form-row .transport-from {
     display: inline !important;
 }
+
