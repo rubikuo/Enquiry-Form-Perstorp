@@ -36,3 +36,16 @@ $(() => {
     }
   });
 });
+
+/*--- to disable the submit button when the check box is not selected ---*/
+
+const submitBtn = $("#submit-btn");
+submitBtn.attr("disabled", "disabled");
+
+$('input[type="checkbox"]').click(function() {
+  if ($(this).prop("checked") == true) {
+    submitBtn.removeAttr("disabled");
+  } else {
+    submitBtn.attr("disabled", "disabled");
+  }
+});
