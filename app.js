@@ -15,26 +15,42 @@ $(() => {
   });
 
   /*---- to disable special requestments checkbox when none is selected ----*/
-  const specialrequirements = $(".special");
-  $("#none").click(function() {
-    if ($(this).prop("checked") == true) {
-      specialrequirements.removeAttr("checked");
-      specialrequirements.attr("disabled", "disabled");
-    } else {
-      specialrequirements.removeAttr("disabled");
-    }
-  });
+  // const specialrequirements = $(".special");
+  // $("#none").click(function() {
+  //   if ($(this).prop("checked") === true) {
+  //     specialrequirements.removeAttr("checked");
+  //     specialrequirements.attr("disabled", "disabled");
+  //   } else {
+  //     specialrequirements.removeAttr("disabled");
+  //   }
+  // });
 
   /*--- to disable none checkbox when requestments are clicked ----*/
+  // var $others = $('input[name="meh"]').not('#omgwtfbbq')
+  // $('#omgwtfbbq').change(function () {
+  //     if (this.checked) {
+  //         $others.prop('checked', false)
+  //     }
+  // });
+  // $others.change(function () {
+  //     if (this.checked) {
+  //         $('#omgwtfbbq').prop('checked', false)
+  //     }
+  // })
 
-  const none = $("#none");
-  $(".special").click(function() {
-    if ($(this).prop("checked") == true) {
-      none.attr("disabled", "disabled");
-    } else {
-      none.removeAttr("disabled");
-    }
+
+   
+  $("#none").change(function () {
+        if (this.checked) {
+          $(".special").prop("checked",false);
+        }
   });
+   $(".special").change(function () {
+     if (this.checked) {
+       $("#none").prop("checked",false);
+     }
+   });
+
 });
 
 /*--- to disable the submit button when the check box is not selected ---*/
@@ -49,3 +65,4 @@ $('input[type="checkbox"]').click(function() {
     submitBtn.attr("disabled", "disabled");
   }
 });
+ve
