@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Perstorp Transport Cost Enqury Form</title>
 </head>
+
 <body>
   <div class="container ml-5 mt-3">
     <img
@@ -17,11 +19,13 @@
       alt="perstorp-logo" id="perstorp-logo">
   </div>
   <h3 class="text-center mt-5">Road Transport Cost Enqury Form</h3>
+
   <!---Enquery Form starts-->
   <div class="container d-flow just-content-center my-5">
     <form class="mx-5">
       <!---Request 1  -->
       <!-- Contact details with autocoplete------------------------------------------------------------------->
+      
       <h5>1. Contact details</h5>
       <div class="form-group ">
         <label>Name</label>
@@ -33,6 +37,7 @@
         <input type="email" class="form-control" style="width: 20rem;" id="useremail"
           placeholder="john.may@perstorp.com" minlength="10" autocomplete="on" pattern=".+@perstorp.com" required>
       </div>
+      
       <!---Request 2------------------------------------------------------------------------>
       <!---radio buttons because you should choose ONLY one option-->
       <h5 class="mt-3 mb-2">2. Transportation type</h5>
@@ -56,6 +61,7 @@
       </div>
       <!---Request 3 ---->
       <!--- if bulk or both, show the following checkboxes:----------------------------------->
+      
       <div class="hide" id="ifBulk">
         <h6 class="mt-3 mb-2 specialnote"><i>** Please select if you have any special requirement (extra costs may
             occur)</i></h6>
@@ -65,6 +71,7 @@
             None
           </label>
         </div>
+        
         <div class="form-check">
           <input class="form-check-input special" type="checkbox" value="" id="special2">
           <label class="form-check-label temperature" for="special2">
@@ -202,6 +209,7 @@
           <input type="text" class="form-control" id="cityFrom">
         </div>
       </div>
+      
       <div class="form-row transport-to">
         <div class="form-group col-md-1">
           <h6>TO: </h6>
@@ -223,6 +231,7 @@
           <input type="text" class="form-control" id="cityTo">
         </div>
       </div>
+      
       <!---Request 8------------------------------------------------------------------------>
       <!------------Free Text------->
       <h5 class="mt-3 mb-2">7. Remarks <small>(optional)</small></h5>
@@ -231,11 +240,17 @@
         <textarea class="form-control" style="width:35rem; max-height:10rem;" placeholder="" type="text" name="remarks"
           maxlength="300" id="remarks" rows="3"></textarea>
       </div>
+
       <!---Request 9------------------------------------------------------------------------>
       <!-----------Submit Button------->
       <button type="submit" class="btn btn-outline-dark" id="submit-btn">Submit</button>
+    
     </form>
   </div>
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -247,4 +262,5 @@
   <script src="app.js"></script>
   <script src="app2.js"></script>
 </body>
+
 </html>
