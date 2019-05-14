@@ -1,5 +1,7 @@
 // ------------------ Rubi's javascript code ----------------//
 $(() => {
+  
+
   /* Request 11 ---- to show or hide special requirment ------*/
 
   $("#bulk").click(() => {
@@ -63,6 +65,7 @@ $(() => {
   $("#quoteType2").change(function() {
     if (this.checked) {
       $("#calender").prop("required", false);
+      $("#calender").val("");
     }
   });
 
@@ -82,4 +85,15 @@ $(() => {
   //     }
 
   // });
+
+  /*---- request 17 countryAPI ----- */
+  getCountriesAndCities();
 });
+  /*----- request 17 countryAPI  ---*/
+function getCountriesAndCities() {
+  $.getJSON( "https://restcountries.eu/rest/v2/all", function( data ) {
+      $.each( data, function(i, item ) {
+          $( "#countries" ).append("<option id='" + item.alpha2Code + "' value='" + item.name + "'>");
+      });
+  });
+}
