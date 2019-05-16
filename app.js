@@ -1,7 +1,42 @@
 // ------------------ Rubi's javascript code ----------------//
+
+/* Request 18 ---- submit the form sending an email to the project owner ------*/
 $(() => {
-  $("form").submit(e => {
+  var ourform = $("form");
+  ourform.submit(e => {
     e.preventDefault;
+
+  var service_id = "adrienn_timko_gmail_com";
+  var template_id = "enquiry";
+
+  ourform.find("button").text("Sending...");
+  emailjs.sendForm(service_id,template_id,myform[0])
+  	.then(function(){ 
+      alert("Your enquiry has been sent to Attila Bata!");
+           ourform.find("button").text("Send");
+        }, function(err) {
+           alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+           ourform.find("button").text("Send");
+        });
+      return false;
+    });
+
+    let template_params = {
+      from_name: $('#username').val(),
+      from_email: $('#useremail').val(),
+      truck: $('#transport-type').val(),
+      //if bulk or both than special: $('#form-check-input').val()
+      //how to define request4 (quantity and frequency) here, like this? (see below)
+      quantity: $('.qty-option').val(),
+      current_load: $('#quoteType1').val(),
+      when_load: $('#calender').val, //if current load, than calender as well
+      estimate: $('#quoteType2').val,
+      product: $('#product-description').val(),
+      from_place: $('.transport-from').val(),
+      to_place: $('.transport-to').val(),
+      other: $('.remarks').val(),
+    }
+    console.log(template_params);
   });
 
   /* Request 11 ---- to show or hide special requirment ------*/

@@ -9,6 +9,8 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!---EmailJS----------------------------------->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script> <script type="text/javascript"> (function(){ emailjs.init("user_HHBliVsX4LsToyTawkEQm"); })(); </script>
   <title>Perstorp Transport Cost Enquiry Form</title>
 </head>
 
@@ -23,9 +25,9 @@
   <!---Enquery Form starts-->
   <div class="container d-flow just-content-center my-5">
     <form class="mx-5">
+      
       <!---Request 1  -->
       <!-- Contact details with autocoplete------------------------------------------------------------------->
-
       <h5>1. Contact details</h5>
       <div class="form-group ">
         <label>Name</label>
@@ -59,9 +61,9 @@
         Both
         </label>
       </div>
+     
       <!---Request 3 ---->
       <!--- if bulk or both, show the following checkboxes:----------------------------------->
-
       <div class="hide" id="ifBulk">
         <h6 class="mt-3 mb-2 specialnote"><i>** Please select if you have any special requirement (extra costs may
             occur)</i></h6>
@@ -134,13 +136,14 @@
           </label>
         </div>
       </div>
+
       <!--Request 4-->
       <!--Input Quantity and Dropdown shipment frequency-->
       <h5 class="my-3">3. Goods quantity and shipment frequency</h5>
       <div class="form-group qty-option">
         <input class="form-control" id="qty-input" style="width:6rem;" placeholder=" " type="number" name="quantity"
           pattern="[0-9]" min="1" required>
-        <!--is there any MOQ request? -->
+        <!--is there any MOQ request? 1 truck/metric ton annualy -->
         <!--input number must be > zero-->
         <select class="form-control " style="width:10rem;">
           <option>Truck(s)</option>
@@ -152,6 +155,7 @@
           <option>Annualy</option>
         </select>
       </div>
+
       <!---Request 5------------------------------------------------------------------------>
       <!------------Estimate upcoming load------->
       <h5 class="mt-3 mb-2">4. Would you like to estimate for an upcoming load or is it a general quote?</h5>
@@ -161,7 +165,7 @@
           Current load <small>(already agreed with the customer)</small>
         </label>
       </div>
-      <!--if current load checked, show the following datepricker:-->
+      <!--if current load checked, fill in the following datepricker:-->
       <div class="form-row calender mt-1">
         <div class="form-group col-md-2 mt-1">
           <label class="pl-4">Valid from:</label>
@@ -176,14 +180,16 @@
           General estimate <small>(for potential business)</small>
         </label>
       </div>
+
       <!---Request 6------------------------------------------------------------------------>
       <!------------Product description------->
       <h5 class="mt-3 mb-2">5. Product description </h5>
       <div class="form-group">
-        <small for="product-decription">(Max. 50 characters)</small>
+        <small for="product-description">(Max. 50 characters)</small>
         <textarea class="form-control" style="width:25rem; max-height:10rem;" placeholder="" type="text" name="product"
-          maxlength="50" id="product-decription" rows="3" required></textarea>
+          maxlength="50" id="product-description" rows="3" required></textarea>
       </div>
+
       <!---Request 7------------------------------------------------------------------------>
       <!------------Transport locations------->
       <h5 class="mt-3 mb-2">6. Transport locations</h5>
@@ -260,7 +266,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="app.js"></script>
-  <script src="app2.js"></script>
+  
 </body>
 
 </html>
