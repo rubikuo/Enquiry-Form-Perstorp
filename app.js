@@ -1,6 +1,8 @@
 // ------------------ Rubi's javascript code ----------------//
 $(() => {
-  
+  $("form").submit(e => {
+    e.preventDefault;
+  });
 
   /* Request 11 ---- to show or hide special requirment ------*/
 
@@ -18,7 +20,7 @@ $(() => {
 
   /* ----- request 12 if temperatue is required ---*/
 
-  $("#temperature").val(""); 
+  $("#temperature").val("");
 
   $("#special2").change(function() {
     if (this.checked) {
@@ -69,31 +71,36 @@ $(() => {
     }
   });
 
-  /*--- to disable the submit button when the check box is not selected ---*/
+  /*---- request 17 countryAPI ----- */
+  getCountriesAndCities();
+
+  // /*--- request 18 to disable the submit button when the specail check box is not selected ---*/
   // const submitBtn = $("#submit-btn");
   // submitBtn.prop("disabled", true);
-
+  // $("#none").change(function () {
+  //   if (this.checked) {
+  //     submitBtn.prop("disabled", false);
+  //   } 
+  // });
+  
   // $(".specail").change(function() {
   //   if (this.checked) {
   //     submitBtn.prop("disabled", false);
-  //   } else {
-  //     submitBtn.prop("disabled", true);
-  //   }
-  //   $("#packed").change(function () {
-  //     if (this.checked) {
-  //       submitBtn.prop("disabled", false);
-  //     }
-
+  //   } 
   // });
-
-  /*---- request 17 countryAPI ----- */
-  getCountriesAndCities();
+  // $("#packed").change(function() {
+  //   if (this.checked) {
+  //     submitBtn.prop("disabled", false);
+  //   }
+  // });
 });
-  /*----- request 17 countryAPI  ---*/
+/*----- request 17 countryAPI  ---*/
 function getCountriesAndCities() {
-  $.getJSON( "https://restcountries.eu/rest/v2/all", function( data ) {
-      $.each( data, function(i, item ) {
-          $( "#countries" ).append("<option id='" + item.alpha2Code + "' value='" + item.name + "'>");
-      });
+  $.getJSON("https://restcountries.eu/rest/v2/all", function(data) {
+    $.each(data, function(i, item) {
+      $("#countries").append(
+        "<option id='" + item.alpha2Code + "' value='" + item.name + "'>"
+      );
+    });
   });
 }
