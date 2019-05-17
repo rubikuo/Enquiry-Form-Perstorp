@@ -1,43 +1,67 @@
-// ------------------ Rubi's javascript code ----------------//
+// ------------------ javascript code ----------------//
 
 /* Request 18 ---- submit the form sending an email to the project owner ------*/
 $(() => {
   var ourform = $("form");
   ourform.submit(e => {
-    e.preventDefault;
+    e.preventDefault(); 
 
   var service_id = "adrienn_timko_gmail_com";
   var template_id = "enquiry";
+  let temp_params = {
+    from_name: $('#username').val(),
+    from_email: $('#useremail').val(),
+    transportType: $('#transport-type').val(),
+    //if bulk or both than special: $('#form-check-input').val()
+    //how to define request4 (quantity and frequency) here, like this? (see below)
+    quantity: $('#qty-input').val(),
+    // quantityOrfrequent: $("#truckOrTon").on("change", function(){
+    //   $("#truckOrTon : selected").text();
+    // }),
+    current_load: $('#quoteType1').val(),
+    when_load: $('#calender').val(), //if current load, than calender as well OR if estimate don't show current_load and when_load
+    estimate: $('#quoteType2').val(),
+    product: $('#product-description').val(),
+    from_place: $('.transport-from').val(),
+    to_place: $('.transport-to').val(),
+    remarks: $('#remarks').val(),
+  }
 
-  ourform.find("button").text("Sending...");
-  emailjs.sendForm(service_id,template_id,myform[0])
-  	.then(function(){ 
-      alert("Your enquiry has been sent to Attila Bata!");
-           ourform.find("button").text("Send");
-        }, function(err) {
-           alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
-           ourform.find("button").text("Send");
-        });
-      return false;
-    });
-
-    let template_params = {
-      from_name: $('#username').val(),
-      from_email: $('#useremail').val(),
-      truck: $('#transport-type').val(),
-      //if bulk or both than special: $('#form-check-input').val()
-      //how to define request4 (quantity and frequency) here, like this? (see below)
-      quantity: $('.qty-option').val(),
-      current_load: $('#quoteType1').val(),
-      when_load: $('#calender').val, //if current load, than calender as well
-      estimate: $('#quoteType2').val,
-      product: $('#product-description').val(),
-      from_place: $('.transport-from').val(),
-      to_place: $('.transport-to').val(),
-      other: $('.remarks').val(),
+  console.log(temp_params);
+  var data = {
+    service_id: service_id,
+    template_id: template_id,
+    user_id: 'user_HHBliVsX4LsToyTawkEQm',
+    template_params: {
+      'from_name': temp_params.from_name,
+      'from_email': temp_params.from_email,
+      // 'quantityOrfrequent': temp_params.quantityOrfrequent,
+      'transportType': temp_params.transportType,
+      'quantity': temp_params.quantity,
+      'current_load': temp_params.current_load,
+      'when_load': temp_params.when_load,
+      'estimate': temp_params.estimate,
+      'product': temp_params.product,
+      'from_place': temp_params.from_email,
+      'to_place': temp_params.to_place,
+      'remarks': temp_params.remarks
     }
-    console.log(template_params);
+  };
+  $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json'
+  }).done(function() {
+    alert('Your mail is sent!');
+  }).fail(function(error) {
+    console.log('Oops... ' + JSON.stringify(error));
   });
+  ourform.find("button").text("Sending...");
+  
+});
+
+    
+ 
 
   /* Request 11 ---- to show or hide special requirment ------*/
 

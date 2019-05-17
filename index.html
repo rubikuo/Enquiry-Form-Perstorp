@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!---EmailJS----------------------------------->
-  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script> <script type="text/javascript"> (function(){ emailjs.init("user_HHBliVsX4LsToyTawkEQm"); })(); </script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript"> (function () { emailjs.init("user_HHBliVsX4LsToyTawkEQm"); })(); </script>
   <title>Perstorp Transport Cost Enquiry Form</title>
 </head>
 
@@ -25,7 +26,7 @@
   <!---Enquery Form starts-->
   <div class="container d-flow just-content-center my-5">
     <form class="mx-5">
-      
+
       <!---Request 1  -->
       <!-- Contact details with autocoplete------------------------------------------------------------------->
       <h5>1. Contact details</h5>
@@ -61,7 +62,7 @@
         Both
         </label>
       </div>
-     
+
       <!---Request 3 ---->
       <!--- if bulk or both, show the following checkboxes:----------------------------------->
       <div class="hide" id="ifBulk">
@@ -145,14 +146,14 @@
           pattern="[0-9]" min="1" required>
         <!--is there any MOQ request? 1 truck/metric ton annualy -->
         <!--input number must be > zero-->
-        <select class="form-control " style="width:10rem;">
-          <option>Truck(s)</option>
-          <option>Metric ton(s)</option>
+        <select class="form-control " style="width:10rem;" id="truckOrTon">
+          <option value="trucks">Truck(s)</option>
+          <option value="metric-ton">Metric ton(s)</option>
         </select>
         <span class="d-inline mx-1">in a frequency of</span>
-        <select class="form-control " style="width:10rem;">
-          <option>Monthly</option>
-          <option>Annualy</option>
+        <select class="form-control " style="width:10rem;" id="monthOrYear">
+          <option value="monthly">Monthly</option>
+          <option value="annualy">Annualy</option>
         </select>
       </div>
 
@@ -160,7 +161,7 @@
       <!------------Estimate upcoming load------->
       <h5 class="mt-3 mb-2">4. Would you like to estimate for an upcoming load or is it a general quote?</h5>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="quoteType" id="quoteType1" value="option1" checked>
+        <input class="form-check-input" type="radio" name="quoteType" id="quoteType1" value="current load" checked>
         <label class="form-check-label" for="quoteType1">
           Current load <small>(already agreed with the customer)</small>
         </label>
@@ -175,7 +176,7 @@
         </div>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="quoteType" id="quoteType2" value="option2">
+        <input class="form-check-input" type="radio" name="quoteType" id="quoteType2" value="general estimate">
         <label class="form-check-label" for="quoteType2">
           General estimate <small>(for potential business)</small>
         </label>
@@ -265,8 +266,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="app.js"></script>
-  
+
 </body>
 
 </html>
