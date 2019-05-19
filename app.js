@@ -23,7 +23,12 @@ $(() => {
     estimate: $('#quoteType2').val(),
     product: $('#product-description').val(),
     from_place: $('.transport-from').val(),
+    zipFrom: $('#zipFrom').val(), //countries list is the same, so I use it only for ship-TO countries
+    cityFrom: $('#cityFrom').val(),
     to_place: $('.transport-to').val(),
+    countryTo: $('#countries').val(),
+    zipTo: $('#zipTo').val(),
+    cityTo: $('#cityTo').val(),
     remarks: $('#remarks').val(),
   }
 
@@ -42,7 +47,12 @@ $(() => {
       'when_load': temp_params.when_load,
       'estimate': temp_params.estimate,
       'product': temp_params.product,
-      'from_place': temp_params.from_email,
+      'from_place': temp_params.from_place,
+      'zipFrom': temp_params.zipFrom,
+      'cityFrom': temp_params.cityFrom,
+      'countryTo': temp_params.countryTo,
+      'zipTo': temp_params.zipTo,
+      'cityTo': temp_params.cityTo,
       'to_place': temp_params.to_place,
       'remarks': temp_params.remarks
     }
@@ -59,8 +69,16 @@ $(() => {
   ourform.find("button").text("Sending...");
   
 });
+  /* to grab quoteType to the email (current load or estimate) from question 4 - doesn't work...
 
-    
+  $('#quoteType1').change(function() {
+    if (this.checked)  {
+        $(temp_params.current_load).val();
+ } else {
+        $(temp_params.estimate).val();
+ }
+ });*/
+ 
  
 
   /* Request 11 ---- to show or hide special requirment ------*/
