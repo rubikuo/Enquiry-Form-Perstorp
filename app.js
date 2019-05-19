@@ -11,22 +11,28 @@ $(() => {
   let temp_params = {
     from_name: $('#username').val(),
     from_email: $('#useremail').val(),
-    transportType: $('#transport-type').val(),
+    bulk: $('#bulk').val(),
+    packed: $('#packed').val(),
+    both: $('#both').val(),
+    none: $('#none').val(),
+    requested_temp: $('#special2').val(),
+    temperature: $('#temperature').val(),
     //if bulk or both than special: $('#form-check-input').val()
     //how to define request4 (quantity and frequency) here, like this? (see below)
     quantity: $('#qty-input').val(),
     // quantityOrfrequent: $("#truckOrTon").on("change", function(){
     //   $("#truckOrTon : selected").text();
     // }),
+    truckOrTon: $('#truckOrTon').val(),
+    monthOrYear:$('#monthOrYear').val(),
     current_load: $('#quoteType1').val(),
     when_load: $('#calender').val(), //if current load, than calender as well OR if estimate don't show current_load and when_load
     estimate: $('#quoteType2').val(),
     product: $('#product-description').val(),
-    from_place: $('.transport-from').val(),
+    countryFrom: $('#countryFrom').val(),
     zipFrom: $('#zipFrom').val(), //countries list is the same, so I use it only for ship-TO countries
     cityFrom: $('#cityFrom').val(),
-    to_place: $('.transport-to').val(),
-    countryTo: $('#countries').val(),
+    countryTo: $('#countryTo').val(),
     zipTo: $('#zipTo').val(),
     cityTo: $('#cityTo').val(),
     remarks: $('#remarks').val(),
@@ -41,19 +47,25 @@ $(() => {
       'from_name': temp_params.from_name,
       'from_email': temp_params.from_email,
       // 'quantityOrfrequent': temp_params.quantityOrfrequent,
-      'transportType': temp_params.transportType,
+      'bulk': temp_params.bulk,
+      'packed': temp_params.packed,
+      'both': temp_params.both,
+      'none': temp_params.none,
+      'requested_temp': temp_params.requested_temp,
+      'temperature': temp_params.temperature,
       'quantity': temp_params.quantity,
+      'truckOrTon': temp_params.truckOrTon,
+      'monthOrYear': temp_params.monthOrYear,
       'current_load': temp_params.current_load,
       'when_load': temp_params.when_load,
       'estimate': temp_params.estimate,
       'product': temp_params.product,
-      'from_place': temp_params.from_place,
+      'countryFrom': temp_params.countryFrom,
       'zipFrom': temp_params.zipFrom,
       'cityFrom': temp_params.cityFrom,
       'countryTo': temp_params.countryTo,
       'zipTo': temp_params.zipTo,
       'cityTo': temp_params.cityTo,
-      'to_place': temp_params.to_place,
       'remarks': temp_params.remarks
     }
   };
